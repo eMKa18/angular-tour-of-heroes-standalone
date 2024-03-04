@@ -16,9 +16,6 @@ export class HeroService {
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   getHeroes(): Observable<Hero[]> {
-    // const heroes = of(HEROES);
-    // this.messageService.add("HeroService: fetched heroes");
-    // return heroes;
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
         //tap - bierze element, moze cos z nim zrobic, i przekazuje dalej
