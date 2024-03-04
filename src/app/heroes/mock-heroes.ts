@@ -1,3 +1,4 @@
+import { Observable, of } from "rxjs";
 import { Hero } from "./hero";
 
 export const HEROES: Hero[] = [
@@ -11,3 +12,16 @@ export const HEROES: Hero[] = [
   { id: 19, name: 'Magma' },
   { id: 20, name: 'Tornado' }
 ];
+
+export class MockHeroService {
+  getHeroes(): Observable<Hero[]> {
+    return of([{ id: 12, name: 'Dr. Nice' },
+    { id: 13, name: 'Bombasto' },
+    { id: 14, name: 'Celeritas' },]);
+  }
+}
+
+export class MockMessageService {
+  add(message: string) {}
+  clear() {}
+}
